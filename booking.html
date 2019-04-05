@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>Booking Form </title>
+
+	<link href="https://fonts.googleapis.com/css?family=Raleway:400,700" rel="stylesheet">
+
+	<link type="text/css" rel="stylesheet" href="css/bootstrap.min.css" />
+
+	<link type="text/css" rel="stylesheet" href="css/style.css" />
+
+
+</head>
+
+<body>
+	<form method="post" action="payment.html">
+	<div id="booking" class="section">
+		<div class="section-center">
+			<div class="container">
+				<div class="row">
+					<div class="booking-form">
+						<div class="form-header">
+							<h1>Reservation of cars</h1>
+						</div>
+						<form onsubmit="payment.html">
+							<div class="form-group">
+								<input class="form-control" type="text" placeholder="Country, ZIP, city...">
+								<span class="form-label">Destination</span>
+							</div>
+							<div class="row">
+								<div class="col-md-6">
+									<div class="form-group">
+										<input class="form-control" type="date" required>
+										<span class="form-label">CarCheck In</span>
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="form-group">
+										<input class="form-control" type="date" required>
+										<span class="form-label">CarCheck out</span>
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-4">
+									<div class="form-group">
+										<select class="form-control" required>
+											<option value="" selected hidden>pickuptime/option>
+											<option>1:30pm</option>
+											<option>2:30pm</option>
+											<option>3:30pm</option>
+											<option>4:30pm</option>
+										</select>
+										<span class="select-arrow"></span>
+										<span class="form-label">Picktime</span>
+									</div>
+								</div>
+								<div class="col-md-4">
+									<div class="form-group">
+										<select class="form-control" required>
+											<option value="" selected hidden>Vehicles</option>
+											<option>SUV</option>
+											<option>audi x3</option>
+											<option>bmw</option>
+											<option>datsun-go</option>
+											<option>bugatti</option>
+											<option>ferarri</option>
+										</select>
+										<span class="select-arrow"></span>
+										<span class="form-label">vehicles</span>
+									</div>
+								</div>
+								<div class="col-md-4">
+									<div class="form-group">
+										<select class="form-control" required>
+											<option value="" selected hidden>Drop time</option>
+											<option>1:00pm</option>
+											<option>2:30pm</option>
+											<option>4:30pm</option>
+											<option>5:30pm</option>
+										</select>
+										<span class="select-arrow"></span>
+										<span class="form-label">Drop time</span>
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-6">
+									<div class="form-group">
+										<input class="form-control" type="email" placeholder="Enter your Email">
+										<span class="form-label">Email</span>
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="form-group">
+										<input class="form-control" type="tel" placeholder="Enter you Phone">
+										<span class="form-label">Phone</span>
+									</div>
+								</div>
+							</div>
+							<div class="form-btn">
+								<!--<a href="payment.html"><button class="submit-btn">Book Now</button></a>-->
+								<input type="submit" value="Book Now" class="submit-btn">
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script src="js/jquery.min.js"></script>
+	<script>
+		$('.form-control').each(function () {
+			floatedLabel($(this));
+		});
+
+		$('.form-control').on('input', function () {
+			floatedLabel($(this));
+		});
+
+		function floatedLabel(input) {
+			var $field = input.closest('.form-group');
+			if (input.val()) {
+				$field.addClass('input-not-empty');
+			} else {
+				$field.removeClass('input-not-empty');
+			}
+		}
+	</script>
+</form>
+</body>
+
+</html>
